@@ -9,40 +9,36 @@ import image6 from "../assets/images/advanced-option.jpg";
 const { Meta } = Card;
 const Features = () => {
   const items = [
-    [
-      {
-        id: 1,
-        img: image1,
-        title: "Modern Design",
-      },
-      {
-        id: 2,
-        img: image2,
-        title: "Clean and Elegant",
-      },
-      {
-        id: 3,
-        img: image3,
-        title: "Great Support",
-      },
-    ],
-    [
-      {
-        id: 4,
-        img: image4,
-        title: "Great Support",
-      },
-      {
-        id: 5,
-        img: image5,
-        title: "Great Support",
-      },
-      {
-        id: 6,
-        img: image6,
-        title: "Great Support",
-      },
-    ],
+    {
+      id: 1,
+      img: image1,
+      title: "Modern Design",
+    },
+    {
+      id: 2,
+      img: image2,
+      title: "Clean and Elegant",
+    },
+    {
+      id: 3,
+      img: image3,
+      title: "Great Support",
+    },
+    {
+      id: 4,
+      img: image4,
+      title: "Great Support",
+    },
+    {
+      id: 5,
+      img: image5,
+      title: "Great Support",
+    },
+    {
+      id: 6,
+      img: image6,
+      title: "Great Support",
+    },
   ];
   return (
     <div className="block featureBlock bgGray">
@@ -52,24 +48,17 @@ const Features = () => {
           <p>dolor sit amet. lorem ipsum</p>
         </div>
 
-        {items.map((row) => {
-          return (
-            <Row gutter={[16, 16]} key={Math.random(100)}>
-              {row.map((item) => {
-                return (
-                  <Col span={8} key={item.id}>
-                    <Card
-                      hoverable
-                      cover={<img alt="example" src={item.img} />}
-                    >
-                      <Meta title={item.title} />
-                    </Card>
-                  </Col>
-                );
-              })}
-            </Row>
-          );
-        })}
+        <Row gutter={[16, 16]}>
+          {items.map((item) => {
+            return (
+              <Col xs={12} sm={12} md={8} lg={8} key={item.id}>
+                <Card hoverable cover={<img alt="example" src={item.img} />}>
+                  <Meta title={item.title} />
+                </Card>
+              </Col>
+            );
+          })}
+        </Row>
       </div>
     </div>
   );
