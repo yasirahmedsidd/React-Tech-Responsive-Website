@@ -2,8 +2,9 @@ import React from "react";
 import "./App.css";
 import { Layout } from "antd";
 import AppHeader from "./components/Header";
+import AppFooter from "./components/Footer";
 import Home from "./pages/Home/Home";
-const { Header, Content } = Layout;
+const { Header, Content, Footer } = Layout;
 
 const App = () => {
   return (
@@ -14,6 +15,9 @@ const App = () => {
       <Content>
         <Home />
       </Content>
+      <Footer>
+        <AppFooter />
+      </Footer>
     </Layout>
   );
 };
