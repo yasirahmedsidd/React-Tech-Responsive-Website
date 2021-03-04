@@ -1,4 +1,6 @@
 import { Menu } from "antd";
+import { Anchor } from "antd";
+const { Link } = Anchor;
 
 const AppHeader = () => {
   return (
@@ -8,15 +10,15 @@ const AppHeader = () => {
           <i className="fas fa-bolt "></i>
           <a href="https://google.com">Tech</a>
         </div>
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
-          <Menu.Item key="Home">Home</Menu.Item>
-          <Menu.Item key="About">About</Menu.Item>
-          <Menu.Item key="Features">Features</Menu.Item>
-          <Menu.Item key="How it Works">How it Works</Menu.Item>
-          <Menu.Item key="FAQ">FAQ</Menu.Item>
-          <Menu.Item key="Pricing">Pricing</Menu.Item>
-          <Menu.Item key="Contact">Contact</Menu.Item>
-        </Menu>
+        <Anchor targetOffset={6}>
+          <Link href="#home" title="Home" />
+          <Link href="#about" title="About" />
+          <Link href="#features" title="Features" />
+          <Link href="#works" title="How it Works" />
+          <Link href="#faq" title="FAQ" />
+          <Link href="#pricing" title="Pricing" />
+          <Link href="#contact" title="Contact" />
+        </Anchor>
       </div>
     </div>
   );
