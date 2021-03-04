@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Anchor, Drawer, Button } from "antd";
-import { BarsOutlined } from "@ant-design/icons";
+
 const { Link } = Anchor;
 const AppHeader = () => {
   const [visible, setVisible] = useState(false);
