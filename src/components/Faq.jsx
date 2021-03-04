@@ -11,7 +11,7 @@ const Faq = () => {
 `;
 
   return (
-    <div className="block faqBlock">
+    <div id="faq" className="block faqBlock">
       <div className="container-fluid">
         <div className="titleHolder">
           <h2>Frequently Asked Questions</h2>

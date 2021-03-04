@@ -24,7 +24,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="heroBlock">
+    <div id="home" className="heroBlock">
       <Carousel>
         {items.map((item) => {
           return (

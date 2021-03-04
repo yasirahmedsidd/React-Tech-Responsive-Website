@@ -31,7 +31,7 @@ const About = () => {
   ];
 
   return (
-    <div className="block aboutBlock">
+    <div id="about" className="block aboutBlock">
       <div className="container-fluid">
         <div className="titleHolder">
           <h2>About Us</h2>
