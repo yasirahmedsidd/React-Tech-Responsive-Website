@@ -1,6 +1,13 @@
-import { Menu } from "antd";
+import { useState } from "react";
+import { Anchor, Drawer, Button } from "antd";
 
+const { Link } = Anchor;
 const AppHeader = () => {
+  const [visible, setVisible] = useState(false);
+
+  const showDrawer = () => setVisible(true);
+  const onClose = () => setVisible(false);
+
   return (
     <div className="container-fluid">
       <div className="header">
@@ -8,15 +15,38 @@ const AppHeader = () => {
           <i className="fas fa-bolt "></i>
           <a href="https://google.com">Tech</a>
         </div>
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
-          <Menu.Item key="Home">Home</Menu.Item>
-          <Menu.Item key="About">About</Menu.Item>
-          <Menu.Item key="Features">Features</Menu.Item>
-          <Menu.Item key="How it Works">How it Works</Menu.Item>
-          <Menu.Item key="FAQ">FAQ</Menu.Item>
-          <Menu.Item key="Pricing">Pricing</Menu.Item>
-          <Menu.Item key="Contact">Contact</Menu.Item>
-        </Menu>
+        <div className="mobileHidden">
+          <Anchor targetOffset={65}>
+            <Link href="#home" title="Home" />
+            <Link href="#about" title="About" />
+            <Link href="#features" title="Features" />
+            <Link href="#works" title="How it Works" />
+            <Link href="#faq" title="FAQ" />
+            <Link href="#pricing" title="Pricing" />
+            <Link href="#contact" title="Contact" />
+          </Anchor>
+        </div>
+        <div className="mobileVisible">
+          <Button type="primary" onClick={showDrawer}>
+            <i className="fas fa-bars"></i>
+          </Button>
+          <Drawer
+            placement="right"
+            closable={false}
+            onClose={onClose}
+            visible={visible}
+          >
+            <Anchor targetOffset={65}>
+              <Link href="#home" title="Home" />
+              <Link href="#about" title="About" />
+              <Link href="#features" title="Features" />
+              <Link href="#works" title="How it Works" />
+              <Link href="#faq" title="FAQ" />
+              <Link href="#pricing" title="Pricing" />
+              <Link href="#contact" title="Contact" />
+            </Anchor>
+          </Drawer>
+        </div>
       </div>
     </div>
   );
